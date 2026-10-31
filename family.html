@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L54 24 L62 18 L58 34 L82 22 L72 40 L88 44 L74 52 L95 58 L68 64 L74 76 L56 70 L53 95 L47 95 L44 70 L26 76 L32 64 L5 58 L26 52 L12 44 L28 40 L18 22 L42 34 L38 18 L46 24 Z' fill='%23D9731A'/%3E%3C/svg%3E">
+<title>مهام ومواعيد العائلة</title>
+<style>@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-800-900.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Display';src:url('./assets/fonts/thmanyah-display-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Display';src:url('./assets/fonts/thmanyah-display-800-900.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap}
+body{margin:0;font-family:'Thmanyah Sans',system-ui,sans-serif}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+a{color:inherit;text-decoration:none}
+@keyframes leafA{from{transform:translate3d(0,-200px,0) rotate(0deg)}to{transform:translate3d(-150px,1300px,0) rotate(430deg)}}
+@keyframes leafB{from{transform:translate3d(0,-200px,0) rotate(20deg)}to{transform:translate3d(135px,1300px,0) rotate(-380deg)}}
+@keyframes leafC{from{transform:translate3d(0,-200px,0) rotate(-15deg)}to{transform:translate3d(-60px,1300px,0) rotate(265deg)}}
+@keyframes leafD{from{transform:translate3d(0,-200px,0) rotate(45deg)}to{transform:translate3d(205px,1300px,0) rotate(505deg)}}
+@keyframes leafE{from{transform:translate3d(0,-200px,0) rotate(-40deg)}to{transform:translate3d(-225px,1300px,0) rotate(-305deg)}}</style>
+<style>html, body { margin: 0; height: 100%; background: #0B0906; overflow: hidden; }
+#dc-stage {
+  position: absolute; top: 50%; left: 50%;
+  width: 1920px; height: 1080px; margin: -540px 0 0 -960px;
+  transform-origin: center center;
+}</style>
+</head>
+<body>
+
+<div id="dc-stage"><div id="dc-root"></div></div>
+
+<template id="dc-template">
+<div style="--gold: {{accent}}; {{theme}} width: 1920px; height: 1080px; box-sizing: border-box; padding: 44px 80px; direction: rtl; position: relative; overflow: hidden; color: var(--ink); background: radial-gradient(1020px 700px at 6% -10%, rgba(125,140,74,0.26), transparent 64%), radial-gradient(900px 640px at 98% 106%, rgba(233,162,60,0.30), transparent 62%), var(--bg)">
+
+<style>
+@keyframes leafA { from { transform: translate3d(0,-200px,0) rotate(0deg) } to { transform: translate3d(-150px,1300px,0) rotate(430deg) } }
+@keyframes leafB { from { transform: translate3d(0,-200px,0) rotate(20deg) } to { transform: translate3d(135px,1300px,0) rotate(-380deg) } }
+@keyframes leafC { from { transform: translate3d(0,-200px,0) rotate(-15deg) } to { transform: translate3d(-60px,1300px,0) rotate(265deg) } }
+@keyframes leafD { from { transform: translate3d(0,-200px,0) rotate(45deg) } to { transform: translate3d(205px,1300px,0) rotate(505deg) } }
+@keyframes leafE { from { transform: translate3d(0,-200px,0) rotate(-40deg) } to { transform: translate3d(-225px,1300px,0) rotate(-305deg) } }
+@keyframes popIn { from { opacity: 0; transform: translateY(-16px) scale(0.6) } to { opacity: 1; transform: translateY(0) scale(1) } }
+@keyframes popOut { from { opacity: 1; transform: translateY(0) scale(1) } to { opacity: 0; transform: translateY(-16px) scale(0.6) } }
+@keyframes plusTurn { from { transform: rotate(0deg) } to { transform: rotate(135deg) } }
+@keyframes plusBack { from { transform: rotate(135deg) } to { transform: rotate(0deg) } }
+</style>
+
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0">
+<sc-for list="{{leavesBack}}" as="lf" hint-placeholder-count="16">
+<div style="{{lf.style}}">
+<sc-if value="{{lf.maple}}" hint-placeholder-val="{{true}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 5 L54 24 L62 18 L58 34 L82 22 L72 40 L88 44 L74 52 L95 58 L68 64 L74 76 L56 70 L53 95 L47 95 L44 70 L26 76 L32 64 L5 58 L26 52 L12 44 L28 40 L18 22 L42 34 L38 18 L46 24 Z" fill="{{lf.color}}"/><path d="M50 93V40M50 54L79 29M50 54L21 29M50 68L86 57M50 68L14 57" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+<sc-if value="{{lf.long}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 3C64 20 75 42 75 60 75 81 63 95 50 97 37 95 25 81 25 60 25 42 36 20 50 3Z" fill="{{lf.color}}"/><path d="M50 95V8M50 70L70 55M50 70L30 55M50 50L72 38M50 50L28 38" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+<sc-if value="{{lf.round}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 6C74 16 90 36 86 56 82 76 66 90 50 96 34 90 18 76 14 56 10 36 26 16 50 6Z" fill="{{lf.color}}"/><path d="M50 94V12M50 60L76 44M50 60L24 44M50 78L70 66M50 78L30 66" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+<div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; gap: 22px">
+
+<div style="display: flex; align-items: center; justify-content: space-between; height: 80px; flex-shrink: 0">
+<div style="display: flex; align-items: center; gap: 22px">
+<a href="index.html" aria-label="العودة إلى الشاشة الرئيسية" style="width: 66px; height: 66px; border-radius: 33px; background: var(--card); border: 2px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink); flex-shrink: 0">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M11 5l-7 7 7 7"/></svg>
+</a>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Thmanyah Display', serif; font-size: 40px; font-weight: 800; line-height: 1.1">مهام ومواعيد العائلة</span>
+<span style="font-size: 22px; font-weight: 500; color: var(--muted)">{{dateLine}}</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 18px">
+<button onClick="{{onTheme}}" aria-label="تبديل الوضع الليلي" style="width: 66px; height: 66px; border-radius: 33px; border: 2px solid var(--gold-line); background: var(--sand); color: var(--accent-ink); display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<sc-if value="{{light}}" hint-placeholder-val="{{true}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 14.5A7.4 7.4 0 0 1 9.8 5.8 7.2 7.2 0 1 0 18.5 14.5z"></path></svg>
+</sc-if>
+<sc-if value="{{dark}}" hint-placeholder-val="{{false}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.4M12 19.2v2.4M2.4 12h2.4M19.2 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M5.2 18.8l1.7-1.7M17.1 6.9l1.7-1.7"></path></svg>
+</sc-if>
+</button>
+<span id="fam-clock" style="font-family: 'Thmanyah Display', serif; font-size: 50px; font-weight: 800; letter-spacing: 1px">{{clock}}</span>
+</div>
+</div>
+
+<div style="display: flex; gap: 22px; height: 880px; flex-shrink: 0">
+
+<div style="width: 720px; flex-shrink: 0; border-radius: 40px; padding: 30px 34px; box-sizing: border-box; background: var(--card); border: 2px solid var(--olive-line); box-shadow: 0 14px 34px rgba(60,40,15,0.07); display: flex; flex-direction: column; gap: 16px">
+
+<div style="display: flex; align-items: center; justify-content: space-between; flex-shrink: 0">
+<span style="font-family: 'Thmanyah Display', serif; font-size: 30px; font-weight: 800">قائمة المهام</span>
+<span style="font-size: 21px; font-weight: 800; color: var(--olive)">{{doneLabel}}</span>
+</div>
+
+<label for="newTask" style="font-size: 20px; font-weight: 700; color: var(--muted); flex-shrink: 0">إضافة مهمة جديدة</label>
+<div style="display: flex; gap: 12px; flex-shrink: 0">
+<input id="newTask" type="text" onKeyDown="{{onKey}}" placeholder="مثال: شراء أغراض العشاء" style="flex: 1; min-width: 0; height: 76px; border-radius: 22px; border: 3px solid var(--input-line); background: var(--card-soft); color: var(--ink); font-size: 24px; font-weight: 500; padding: 0 22px; box-sizing: border-box; outline: none">
+<button onClick="{{onMic}}" aria-label="الإدخال الصوتي عبر الريموت" style="{{micStyle}}">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/></svg>
+</button>
+<div style="position: relative; flex-shrink: 0">
+<button onClick="{{onAdd}}" aria-label="إضافة المهمة" style="width: 76px; height: 76px; border-radius: 22px; border: 3px solid var(--gold-line); background: var(--gold); color: var(--ink); display: flex; align-items: center; justify-content: center">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="{{plusStyle}}"><path d="M12 5v14M5 12h14"/></svg>
+</button>
+<sc-if value="{{picking}}" hint-placeholder-val="{{false}}">
+<div style="{{menuStyle}}">
+<div style="position: absolute; top: -9px; left: 30px; width: 16px; height: 16px; background: var(--card); border-left: 2px solid var(--pop-line); border-top: 2px solid var(--pop-line); transform: rotate(45deg)"></div>
+<sc-if value="{{notAdding}}" hint-placeholder-val="{{true}}">
+<span style="font-size: 17px; font-weight: 800; color: var(--accent-ink); padding: 2px 6px 0">لمن تُوكل؟</span>
+<sc-if value="{{noPeople}}" hint-placeholder-val="{{true}}">
+<span style="font-size: 16px; font-weight: 600; color: var(--muted); padding: 0 6px 2px">لا توجد أسماء بعد</span>
+</sc-if>
+<sc-for list="{{people}}" as="pp" hint-placeholder-count="2">
+<button onClick="{{pp.pick}}" style="height: 54px; border-radius: 16px; border: 2px solid var(--gold-line); background: var(--sand); color: var(--ink); font-size: 21px; font-weight: 800">{{pp.name}}</button>
+</sc-for>
+<button onClick="{{startAdd}}" style="height: 52px; border-radius: 16px; border: 2px dashed var(--gold-line); background: transparent; color: var(--accent-ink); font-size: 19px; font-weight: 800">+ إضافة اسم</button>
+<button onClick="{{cancelPick}}" style="height: 44px; border-radius: 14px; border: 2px solid var(--cancel-line); background: var(--card); color: var(--muted); font-size: 18px; font-weight: 700">إلغاء</button>
+</sc-if>
+<sc-if value="{{adding}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 17px; font-weight: 800; color: var(--accent-ink); padding: 2px 6px 0">اسم الشخص</span>
+<input id="newPerson" type="text" placeholder="اكتب الاسم" style="height: 56px; border-radius: 16px; border: 3px solid var(--input-line); background: var(--card-soft); color: var(--ink); font-size: 21px; font-weight: 600; padding: 0 16px; box-sizing: border-box; outline: none">
+<button onClick="{{savePerson}}" style="height: 54px; border-radius: 16px; border: 2px solid var(--gold-line); background: var(--gold); color: #2E1A0B; font-size: 20px; font-weight: 800">حفظ وإسناد</button>
+<button onClick="{{backFromAdd}}" style="height: 44px; border-radius: 14px; border: 2px solid var(--cancel-line); background: var(--card); color: var(--muted); font-size: 18px; font-weight: 700">رجوع</button>
+</sc-if>
+</div>
+</sc-if>
+</div>
+</div>
+
+<sc-if value="{{listening}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; align-items: center; gap: 14px; height: 54px; border-radius: 18px; padding: 0 20px; box-sizing: border-box; background: var(--mic-bg); border: 2px solid var(--mic-line); flex-shrink: 0">
+<div style="width: 12px; height: 12px; border-radius: 6px; background: var(--mic-line); flex-shrink: 0"></div>
+<span style="font-size: 21px; font-weight: 800; color: var(--mic-fg)">يستمع… تحدّث الآن في ميكروفون الريموت</span>
+</div>
+</sc-if>
+<sc-if value="{{notListening}}" hint-placeholder-val="{{true}}">
+<span style="font-size: 19px; font-weight: 500; color: var(--muted); flex-shrink: 0">اضغط زر الميكروفون في ريموت Magic Remote، أو اكتب بلوحة المفاتيح على الشاشة</span>
+</sc-if>
+
+<div style="flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-left: 6px">
+<sc-for list="{{tasks}}" as="task" hint-placeholder-count="5">
+<button onClick="{{task.toggle}}" style="{{task.rowStyle}}">
+<div style="{{task.boxStyle}}">
+<sc-if value="{{task.done}}" hint-placeholder-val="{{true}}">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--card)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 4.5 4.5 10-10"/></svg>
+</sc-if>
+</div>
+<span style="{{task.textStyle}}">{{task.text}}</span>
+<sc-if value="{{task.hasWho}}" hint-placeholder-val="{{true}}">
+<span style="{{task.whoStyle}}">{{task.who}}</span>
+</sc-if>
+</button>
+</sc-for>
+</div>
+</div>
+
+<div style="position: relative; flex: 1; min-width: 0; border-radius: 40px; padding: 30px 34px; box-sizing: border-box; background: var(--card); border: 2px solid var(--cal-line); box-shadow: 0 14px 34px rgba(60,40,15,0.07); display: flex; flex-direction: column; gap: 14px">
+
+<div style="display: flex; align-items: center; justify-content: space-between; flex-shrink: 0">
+<span style="font-family: 'Thmanyah Display', serif; font-size: 30px; font-weight: 800">{{monthLabel}}</span>
+<span style="font-size: 21px; font-weight: 700; color: var(--muted)">{{hijriLabel}}</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; flex-shrink: 0">
+<sc-for list="{{weekdays}}" as="w" hint-placeholder-count="7">
+<span style="text-align: center; font-size: 20px; font-weight: 800; color: var(--muted)">{{w.label}}</span>
+</sc-for>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-rows: repeat(6, 78px); gap: 8px; flex-shrink: 0">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="42">
+<button onClick="{{d.onPick}}" disabled="{{d.blank}}" aria-label="{{d.aria}}" style="{{d.cellStyle}}">
+<span style="{{d.numStyle}}">{{d.label}}</span>
+<span style="{{d.hijriStyle}}">{{d.hijri}}</span>
+<div style="{{d.dotStyle}}"></div>
+</button>
+</sc-for>
+</div>
+
+<sc-if value="{{dayOpen}}" hint-placeholder-val="{{false}}">
+<div style="{{eventPanelStyle}}">
+<span style="font-size: 20px; font-weight: 800; color: var(--accent-ink)">موعد جديد · {{pickedLabel}}</span>
+<input id="newEvent" type="text" placeholder="مثال: عشاء عند الجدّة" style="height: 64px; border-radius: 18px; border: 3px solid var(--input-line); background: var(--card-soft); color: var(--ink); font-size: 22px; font-weight: 500; padding: 0 18px; box-sizing: border-box; outline: none">
+<div style="display: flex; gap: 10px">
+<input id="newEventTime" type="text" placeholder="٨:٠٠ م" style="width: 150px; flex-shrink: 0; height: 60px; border-radius: 18px; border: 3px solid var(--input-line); background: var(--card-soft); color: var(--ink); font-size: 21px; font-weight: 600; padding: 0 16px; box-sizing: border-box; outline: none; text-align: center">
+<button onClick="{{saveEvent}}" style="flex: 1; min-width: 0; height: 60px; border-radius: 18px; border: 3px solid var(--gold-line); background: var(--gold); color: var(--ink); font-size: 22px; font-weight: 800">حفظ الموعد</button>
+<button onClick="{{cancelEvent}}" style="width: 120px; flex-shrink: 0; height: 60px; border-radius: 18px; border: 2px solid var(--cancel-line); background: var(--card); color: var(--muted); font-size: 20px; font-weight: 700">إلغاء</button>
+</div>
+</div>
+</sc-if>
+
+<span style="font-size: 25px; font-weight: 800; margin-top: 4px; flex-shrink: 0">المواعيد القادمة</span>
+<div style="display: flex; flex-direction: column; gap: 10px; flex: 1; min-height: 0; overflow-y: auto">
+<sc-for list="{{events}}" as="e" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 18px; height: 72px; border-radius: 20px; padding: 0 22px; box-sizing: border-box; background: var(--card-soft); border: 2px solid var(--line); flex-shrink: 0">
+<div style="{{e.pillStyle}}">{{e.day}}</div>
+<div style="display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0">
+<span style="font-size: 23px; font-weight: 800">{{e.title}}</span>
+<span style="font-size: 19px; font-weight: 500; color: var(--muted)">{{e.sub}}</span>
+</div>
+<span style="font-size: 21px; font-weight: 800; color: var(--accent-ink)">{{e.time}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+</div>
+
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 4">
+<sc-for list="{{leavesFront}}" as="lf" hint-placeholder-count="10">
+<div style="{{lf.style}}">
+<sc-if value="{{lf.maple}}" hint-placeholder-val="{{true}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 5 L54 24 L62 18 L58 34 L82 22 L72 40 L88 44 L74 52 L95 58 L68 64 L74 76 L56 70 L53 95 L47 95 L44 70 L26 76 L32 64 L5 58 L26 52 L12 44 L28 40 L18 22 L42 34 L38 18 L46 24 Z" fill="{{lf.color}}"/><path d="M50 93V40M50 54L79 29M50 54L21 29M50 68L86 57M50 68L14 57" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+<sc-if value="{{lf.long}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 3C64 20 75 42 75 60 75 81 63 95 50 97 37 95 25 81 25 60 25 42 36 20 50 3Z" fill="{{lf.color}}"/><path d="M50 95V8M50 70L70 55M50 70L30 55M50 50L72 38M50 50L28 38" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+<sc-if value="{{lf.round}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 6C74 16 90 36 86 56 82 76 66 90 50 96 34 90 18 76 14 56 10 36 26 16 50 6Z" fill="{{lf.color}}"/><path d="M50 94V12M50 60L76 44M50 60L24 44M50 78L70 66M50 78L30 66" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+<a href="settings.html" aria-label="الانتقال إلى الإعدادات السريعة" style="position: absolute; right: 0; top: 461px; height: 250px; width: 50px; box-sizing: border-box; border-radius: 26px 0 0 26px; background: linear-gradient(180deg, var(--gold), #CC6B3E); display: flex; align-items: center; justify-content: center; color: var(--ink); z-index: 6; box-shadow: -6px 0 20px rgba(180,90,45,0.28)">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+</a>
+
+<a href="index.html" aria-label="العودة إلى الشاشة الرئيسية" style="position: absolute; left: 0; top: 461px; height: 250px; width: 50px; box-sizing: border-box; border-radius: 0 26px 26px 0; background: var(--card); border: 2px solid var(--line); border-left: 0; display: flex; align-items: center; justify-content: center; color: var(--ink); z-index: 6; box-shadow: 6px 0 20px rgba(90,45,10,0.10)">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+</a>
+
+</div>
+</template>
+
+<script src="./assets/runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dark: false,
+      people: [],
+      adding: false,
+      listening: false,
+      picking: false,
+      closing: false,
+      dayPicked: null,
+      eventClosing: false,
+      extraEvents: [],
+      nextId: 100,
+      tasks: [
+        { id: 1, text: 'شراء أغراض عشاء الجمعة', who: '', done: false },
+        { id: 2, text: 'حجز موعد عيادة الأسنان', who: '', done: false },
+        { id: 3, text: 'مراجعة واجبات المدرسة', who: '', done: true },
+        { id: 4, text: 'ترتيب زيارة الجدّين', who: '', done: false },
+        { id: 5, text: 'تجهيز حقائب رحلة نهاية الأسبوع', who: '', done: false }
+      ]
+    };
+  }
+
+
+  themeVars() {
+    return this.state.dark
+      ? '--bg:#15110C;--card:#241D15;--card-soft:#1D1710;--line:#3C3024;--ink:#F4EADC;--muted:#B6A58B;--accent-ink:#F0B45C;--gold-line:#A86A1C;--olive:#8ED9B0;--olive-solid:#35A06C;--olive-muted:#74C39A;--olive-bg:#0E261A;--olive-bg2:#091C13;--olive-line:#235840;--olive-tint:#17351F;--tile-line:#27573E;--tile-name:#ACDCC2;--tile-time:#E2F5EA;--tile-next:#1C3E2B;--input-line:#4A3D2C;--pop-line:#8A6A2A;--sand:#3E3018;--cal-line:#4C3C20;--cell-line:#3A2F22;--cell-num:#E6DAC6;--done-bg:#15301F;--done-line:#2A553C;--check-line:#4E4232;--who-bg:#4E3C1C;--who-line:#6E5526;--mic-bg:#3A241A;--mic-line:#D1703F;--mic-fg:#F0A17A;--cancel-line:#463A2A;--track-bg:#322718;--toggle-off:#3E3426;--pill-line:#6A5428;--ic-red:#E0796A;--ic-forest:#84C291;--ic-teal:#7FC0BC;--ic-amber:#E09A4A;--ic-plum:#CB8CAC;--ic-stone:#BCAA94;--card-tr:rgba(36,29,21,0.92);--tile-tr:rgba(20,50,35,0.92);--prayer-a:rgba(14,38,26,0.94);--prayer-b:rgba(9,28,19,0.94);--hero-a:#4A2C12;--hero-b:#3A2010;--hero-c:#2A1409;--hero-ink:#F7E9D6;--hero-blob:rgba(255,226,178,0.07);--hero-blob2:rgba(255,226,178,0.05);--hero-card:rgba(46,32,19,0.94);--hero-card-line:rgba(240,180,92,0.26);--hero-accent:#F2BC6E;--hero-sub:#C4AD8E;--chip-red-bg:#4A2318;--chip-red-fg:#F0A88E;--chip-gold-bg:#4A3618;--chip-gold-fg:#F2BC6E;--chip-olive-bg:#27341A;--chip-olive-fg:#B4CE7E;--chip-plum-bg:#3A2430;--chip-plum-fg:#E0A8C4;'
+      : '--bg:#FBF4E8;--card:#FFFDF8;--card-soft:#FDF8EF;--line:#E8DAC4;--ink:#2E1A0B;--muted:#7A6248;--accent-ink:#8A4F0A;--gold-line:#B8701A;--olive:#46581F;--olive-solid:#4A5D23;--olive-muted:#5A6B30;--olive-bg:#F4F2E2;--olive-bg2:#E9E9D2;--olive-line:#C5C9A0;--olive-tint:#E9EDD4;--tile-line:#D9DCBD;--tile-name:#4A5A2C;--tile-time:#26331A;--tile-next:#FFFBF2;--input-line:#D8C9AE;--pop-line:#E0AE55;--sand:#F7E3BC;--cal-line:#E8CFA0;--cell-line:#EFE4D1;--cell-num:#45321C;--done-bg:#F1F3E2;--done-line:#CDD4AA;--check-line:#C9B9A0;--who-bg:#F2CE8E;--who-line:#DBAF5F;--mic-bg:#FBE7DA;--mic-line:#A8481F;--mic-fg:#8A3A16;--cancel-line:#E3D6C0;--track-bg:#F0E6D4;--toggle-off:#DACFBC;--pill-line:#E3CB99;--ic-red:#9B2C2C;--ic-forest:#2F5233;--ic-teal:#35605E;--ic-amber:#B45309;--ic-plum:#7A3353;--ic-stone:#6B5A4A;--card-tr:rgba(255,253,248,0.92);--tile-tr:rgba(255,253,246,0.92);--prayer-a:rgba(244,242,226,0.94);--prayer-b:rgba(233,233,210,0.94);--hero-a:#F2B65C;--hero-b:#E28B45;--hero-c:#CC6B3E;--hero-ink:#2E1A0B;--hero-blob:rgba(255,248,232,0.26);--hero-blob2:rgba(255,248,232,0.20);--hero-card:rgba(255,251,243,0.94);--hero-card-line:rgba(138,79,10,0.30);--hero-accent:#8A4F0A;--hero-sub:#6E573F;--chip-red-bg:#FBE2D6;--chip-red-fg:#9A3A14;--chip-gold-bg:#FBE6BC;--chip-gold-fg:#8A4F0A;--chip-olive-bg:#EDF0DC;--chip-olive-fg:#46581F;--chip-plum-bg:#F6E6EC;--chip-plum-fg:#6E3450;';
+  }
+
+  readTheme() {
+    try { return localStorage.getItem('lgc2-theme') === 'dark'; } catch (e) { return false; }
+  }
+
+  writeTheme(d) {
+    try { localStorage.setItem('lgc2-theme', d ? 'dark' : 'light'); } catch (e) {}
+  }
+
+  componentDidMount() {
+    if (this.readTheme() && !this.state.dark) this.setState({ dark: true });
+    this.clockTimer = setInterval(function () {
+      var el = document.getElementById('fam-clock');
+      if (!el) return;
+      var txt = this.clockText();
+      if (el.textContent !== txt) el.textContent = txt;
+    }.bind(this), 10000);
+  }
+
+  componentWillUnmount() {
+    if (this.clockTimer) clearInterval(this.clockTimer);
+    if (this.closeTimer) clearTimeout(this.closeTimer);
+    if (this.eventTimer) clearTimeout(this.eventTimer);
+  }
+
+  closeMenu(after) {
+    var self = this;
+    if (this.closeTimer) clearTimeout(this.closeTimer);
+    this.setState({ closing: true });
+    this.closeTimer = setTimeout(function () {
+      self.closeTimer = null;
+      if (after) after();
+      else self.setState({ picking: false, closing: false });
+    }, 200);
+  }
+
+  closeEvent(after) {
+    var self = this;
+    if (this.eventTimer) clearTimeout(this.eventTimer);
+    this.setState({ eventClosing: true });
+    this.eventTimer = setTimeout(function () {
+      self.eventTimer = null;
+      if (after) after();
+      else self.setState({ dayPicked: null, eventClosing: false });
+    }, 200);
+  }
+
+  clockText() {
+    var dt = new Date();
+    var hh = dt.getHours(), mm = dt.getMinutes();
+    var suffix = hh < 12 ? 'ص' : 'م';
+    var h12 = hh % 12;
+    if (h12 === 0) h12 = 12;
+    return this.arabicDigits(h12 + ':' + (mm < 10 ? '0' + mm : mm)) + ' ' + suffix;
+  }
+
+  readDraft() {
+    var el = document.getElementById('newTask');
+    return el ? el.value.trim() : '';
+  }
+
+  clearDraft() {
+    var el = document.getElementById('newTask');
+    if (el) el.value = '';
+  }
+
+  arabicDigits(str) {
+    var map = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+    return String(str).replace(/[0-9]/g, function (d) { return map[+d]; });
+  }
+
+  buildLeaves(count, spread, minSize, sizeRange, minOp, opRange) {
+    var palette = [
+      ['#D9731A', '#8A3B0F'],
+      ['#C2410C', '#6E2A10'],
+      ['#E3A52E', '#A05A14'],
+      ['#B4471F', '#5E1F0A'],
+      ['#CA8A04', '#8A5A0A'],
+      ['#9A3412', '#5A1C08'],
+      ['#E08A2B', '#9A4E12'],
+      ['#8A8F3F', '#4A5520']
+    ];
+    var kfs = ['leafA', 'leafB', 'leafC', 'leafD', 'leafE'];
+    var out = [];
+    var epoch = Date.now() / 1000;
+    for (var i = 0; i < count; i++) {
+      var p = palette[(i * 3 + 1) % palette.length];
+      var size = minSize + ((i * 47) % sizeRange);
+      var dur = 20 + ((i * spread) % 18);
+      var delay = (((i * 23) + epoch) % dur).toFixed(2);
+      var op = (minOp + (((i * 17) % opRange) / 100)).toFixed(2);
+      out.push({
+        maple: i % 3 === 0,
+        long: i % 3 === 1,
+        round: i % 3 === 2,
+        color: p[0],
+        vein: p[1],
+        style: 'position:absolute;top:0;left:' + ((i * spread) % 1870) + 'px;width:' + size + 'px;height:' + size
+          + 'px;opacity:' + op + ';will-change:transform;animation-name:' + kfs[i % 5]
+          + ';animation-duration:' + dur + 's;animation-timing-function:linear;animation-delay:-' + delay
+          + 's;animation-iteration-count:infinite;animation-fill-mode:both'
+      });
+    }
+    return out;
+  }
+
+  leafLayers() {
+    return {
+      back: this.buildLeaves(16, 173, 46, 44, 0.50, 30),
+      front: this.buildLeaves(10, 293, 62, 50, 0.36, 22)
+    };
+  }
+
+  renderVals() {
+    var self = this;
+    var now = new Date();
+    var st = this.state;
+
+    var openPicker = function () {
+      if (!self.readDraft()) return;
+      if (self.state.picking) { self.closeMenu(); return; }
+      self.setState({ picking: true, closing: false, adding: false, listening: false });
+    };
+
+    var assignTo = function (who) {
+      var text = self.readDraft();
+      self.closeMenu(function () {
+        if (!text) { self.setState({ picking: false, closing: false }); return; }
+        self.clearDraft();
+        var cur = self.state;
+        self.setState({
+          picking: false,
+          closing: false,
+          listening: false,
+          nextId: cur.nextId + 1,
+          tasks: cur.tasks.concat([{ id: cur.nextId, text: text, who: who, done: false }])
+        });
+      });
+    };
+
+    var tasks = st.tasks.map(function (t) {
+      return {
+        text: t.text,
+        who: t.who,
+        hasWho: !!t.who,
+        done: t.done,
+        toggle: function () {
+          self.setState({
+            tasks: st.tasks.map(function (x) {
+              return x.id === t.id ? { id: x.id, text: x.text, who: x.who, done: !x.done } : x;
+            })
+          });
+        },
+        rowStyle: 'display:flex;align-items:center;gap:18px;width:100%;height:76px;flex-shrink:0;border-radius:22px;padding:0 22px;box-sizing:border-box;text-align:right;'
+          + (t.done ? 'background:var(--done-bg);border:2px solid var(--done-line);' : 'background:var(--card-soft);border:2px solid var(--line);'),
+        boxStyle: 'width:40px;height:40px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;'
+          + (t.done ? 'background:var(--olive-solid);' : 'background:var(--card);border:3px solid var(--check-line);'),
+        textStyle: 'flex:1;min-width:0;font-size:24px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;'
+          + (t.done ? 'color:var(--tile-name);text-decoration:line-through;' : 'color:var(--ink);'),
+        whoStyle: 'font-size:19px;font-weight:800;color:var(--ink);background:var(--who-bg);border:2px solid var(--who-line);border-radius:14px;padding:5px 14px;flex-shrink:0;'
+      };
+    });
+
+    var doneCount = st.tasks.filter(function (t) { return t.done; }).length;
+
+    var weekdays = ['أحد', 'إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'].map(function (w) {
+      return { label: w };
+    });
+
+    var year = now.getFullYear(), month = now.getMonth(), today = now.getDate();
+    var firstWeekday = new Date(year, month, 1).getDay();
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    var eventDefs = [
+      { offset: 0, title: 'عشاء العائلة', sub: 'في البيت', time: '٨:٠٠ م' },
+      { offset: 2, title: 'زيارة الجدّين', sub: 'بعد صلاة العصر', time: '٤:٣٠ م' },
+      { offset: 5, title: 'اجتماع أولياء الأمور', sub: 'المدرسة', time: '١٠:٠٠ ص' },
+      { offset: 9, title: 'رحلة نهاية الأسبوع', sub: 'انطلاق مبكر', time: '٧:٠٠ ص' }
+    ];
+    var dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+    var raw = [];
+    eventDefs.forEach(function (e) {
+      raw.push({ dt: new Date(year, month, today + e.offset), title: e.title, sub: e.sub, time: e.time });
+    });
+    st.extraEvents.forEach(function (e) {
+      raw.push({ dt: new Date(year, month, e.day), title: e.title, sub: 'موعد عائلي', time: e.time });
+    });
+    raw.sort(function (a, b) { return a.dt - b.dt; });
+
+    var eventDays = {};
+    var events = raw.map(function (e) {
+      var isToday = e.dt.getMonth() === month && e.dt.getDate() === today;
+      if (e.dt.getMonth() === month) eventDays[e.dt.getDate()] = true;
+      return {
+        title: e.title,
+        sub: dayNames[e.dt.getDay()] + ' · ' + e.sub,
+        time: e.time,
+        day: self.arabicDigits(e.dt.getDate()),
+        pillStyle: 'width:56px;height:56px;border-radius:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--ink);'
+          + (isToday ? 'background:#E9A23C;border:2px solid var(--gold-line);' : 'background:var(--sand);border:2px solid var(--pill-line);')
+      };
+    });
+
+    var hijriFmt = null;
+    try {
+      hijriFmt = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-arab', { day: 'numeric' });
+    } catch (e) {
+      hijriFmt = null;
+    }
+    var hijriDay = function (dayNum) {
+      if (!hijriFmt) return '';
+      try { return hijriFmt.format(new Date(year, month, dayNum)); } catch (e) { return ''; }
+    };
+
+    var pickDay = function (n) {
+      return function () {
+        if (self.state.dayPicked === n) { self.closeEvent(); return; }
+        self.setState({ dayPicked: n, eventClosing: false });
+      };
+    };
+
+    var days = [];
+    for (var i = 0; i < 42; i++) {
+      var dayNum = i - firstWeekday + 1;
+      var inMonth = dayNum >= 1 && dayNum <= daysInMonth;
+      var isToday = inMonth && dayNum === today;
+      var hasEvent = inMonth && !!eventDays[dayNum];
+      var isPicked = inMonth && st.dayPicked === dayNum;
+      days.push({
+        label: inMonth ? this.arabicDigits(dayNum) : '',
+        hijri: inMonth ? hijriDay(dayNum) : '',
+        blank: !inMonth,
+        aria: inMonth ? ('إضافة موعد يوم ' + dayNum) : '',
+        onPick: inMonth ? pickDay(dayNum) : null,
+        cellStyle: 'font-family:inherit;padding:0;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;'
+          + (inMonth ? 'cursor:pointer;' : 'cursor:default;')
+          + (isPicked
+            ? 'background:#FBE6BC;border:3px solid var(--accent-ink);box-shadow:0 0 0 3px rgba(138,79,10,0.18);'
+            : (isToday ? 'background:#E9A23C;border:2px solid var(--gold-line);' : (inMonth ? 'background:var(--card-soft);border:2px solid var(--cell-line);' : 'background:transparent;border:0;'))),
+        numStyle: 'font-size:23px;line-height:1;font-weight:' + (isToday ? '900' : '700') + ';color:'
+          + (isToday ? 'var(--ink)' : (inMonth ? 'var(--cell-num)' : 'transparent')) + ';',
+        hijriStyle: 'font-size:15px;line-height:1;font-weight:700;color:'
+          + (isToday ? '#5A3410' : (inMonth ? 'var(--muted)' : 'transparent')) + ';',
+        dotStyle: 'width:8px;height:8px;border-radius:4px;margin-top:1px;background:'
+          + (hasEvent ? (isToday ? 'var(--ink)' : 'var(--olive-solid)') : 'transparent') + ';'
+      });
+    }
+
+    var pickedLabel = '';
+    if (st.dayPicked !== null) {
+      var pd = new Date(year, month, st.dayPicked);
+      pickedLabel = dayNames[pd.getDay()] + ' ' + this.arabicDigits(st.dayPicked);
+      var ph = hijriDay(st.dayPicked);
+      if (ph) pickedLabel += ' · ' + ph + ' هـ';
+    }
+
+    var fmtClock = function (dt) {
+      var hh = dt.getHours(), mm = dt.getMinutes();
+      var suffix = hh < 12 ? 'ص' : 'م';
+      var h12 = hh % 12;
+      if (h12 === 0) h12 = 12;
+      return self.arabicDigits(h12 + ':' + (mm < 10 ? '0' + mm : mm)) + ' ' + suffix;
+    };
+
+    var dateLine = '', monthLabel = '', hijriLabel = '';
+    try {
+      dateLine = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-arab', { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
+      monthLabel = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-arab', { month: 'long', year: 'numeric' }).format(now);
+      hijriLabel = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-arab', { month: 'long', year: 'numeric' }).format(now);
+    } catch (e) {
+      dateLine = this.arabicDigits(now.getDate() + '/' + (month + 1) + '/' + year);
+      monthLabel = this.arabicDigits((month + 1) + ' / ' + year);
+      hijriLabel = '';
+    }
+
+    return {
+      accent: this.props.accent ?? '#E9A23C',
+      leavesBack: this.leafLayers().back,
+      leavesFront: this.leafLayers().front,
+      listening: st.listening,
+      notListening: !st.listening,
+      tasks: tasks,
+      days: days,
+      weekdays: weekdays,
+      events: events,
+      clock: fmtClock(now),
+      dateLine: dateLine,
+      monthLabel: monthLabel,
+      hijriLabel: hijriLabel,
+      doneLabel: this.arabicDigits(doneCount) + ' من ' + this.arabicDigits(st.tasks.length) + ' مكتملة',
+      micStyle: 'width:76px;height:76px;border-radius:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center;'
+        + (st.listening
+          ? 'border:3px solid var(--mic-line);background:var(--mic-bg);color:var(--mic-fg);'
+          : 'border:3px solid var(--input-line);background:var(--card-soft);color:var(--ink);'),
+      theme: this.themeVars(),
+      dark: st.dark,
+      light: !st.dark,
+      onTheme: function () {
+        var d = !self.state.dark;
+        self.writeTheme(d);
+        self.setState({ dark: d });
+      },
+      dayOpen: st.dayPicked !== null,
+      pickedLabel: pickedLabel,
+      eventPanelStyle: 'position:absolute;left:34px;right:34px;bottom:30px;z-index:25;box-sizing:border-box;'
+        + 'border-radius:24px;background:var(--card);border:2px solid var(--pop-line);box-shadow:0 18px 44px rgba(90,45,10,0.26);'
+        + 'padding:18px 20px;display:flex;flex-direction:column;gap:12px;transform-origin:center top;'
+        + 'animation:' + (st.eventClosing ? 'popOut' : 'popIn') + ' 0.2s cubic-bezier(0.34,1.28,0.64,1) both;',
+      saveEvent: function () {
+        var te = document.getElementById('newEvent');
+        var tm = document.getElementById('newEventTime');
+        var title = te ? te.value.trim() : '';
+        var time = tm ? tm.value.trim() : '';
+        if (!title) return;
+        var day = self.state.dayPicked;
+        if (te) te.value = '';
+        if (tm) tm.value = '';
+        self.closeEvent(function () {
+          var cur = self.state;
+          self.setState({
+            dayPicked: null,
+            eventClosing: false,
+            extraEvents: cur.extraEvents.concat([{ day: day, title: title, time: time || 'طوال اليوم' }])
+          });
+        });
+      },
+      cancelEvent: function () { self.closeEvent(); },
+      picking: st.picking,
+      menuStyle: 'position:absolute;top:90px;left:0;width:264px;z-index:30;box-sizing:border-box;'
+        + 'border-radius:22px;background:var(--card);border:2px solid var(--pop-line);box-shadow:0 16px 36px rgba(90,45,10,0.24);'
+        + 'padding:12px;display:flex;flex-direction:column;gap:8px;transform-origin:38px 0;'
+        + 'animation:' + (st.closing ? 'popOut' : 'popIn') + ' 0.2s cubic-bezier(0.34,1.28,0.64,1) both;',
+      plusStyle: 'animation:' + (st.picking && !st.closing ? 'plusTurn' : 'plusBack') + ' 0.22s ease both;',
+      onKey: function (ev) { if (ev.key === 'Enter') openPicker(); },
+      onAdd: openPicker,
+      people: st.people.map(function (n) {
+        return { name: n, pick: function () { assignTo(n); } };
+      }),
+      noPeople: st.people.length === 0,
+      adding: st.adding,
+      notAdding: !st.adding,
+      startAdd: function () { self.setState({ adding: true }); },
+      backFromAdd: function () { self.setState({ adding: false }); },
+      savePerson: function () {
+        var el = document.getElementById('newPerson');
+        var name = el ? el.value.trim() : '';
+        if (!name) return;
+        if (el) el.value = '';
+        var cur = self.state;
+        var list = cur.people.indexOf(name) === -1 ? cur.people.concat([name]) : cur.people;
+        self.setState({ people: list, adding: false });
+        assignTo(name);
+      },
+      cancelPick: function () { self.setState({ adding: false }); self.closeMenu(); },
+      onMic: function () { self.setState({ listening: !st.listening }); }
+    };
+  }
+}
+
+mountDC(Component, { accent: '#E9A23C' });
+</script>
+</body>
+</html>

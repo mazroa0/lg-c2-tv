@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L54 24 L62 18 L58 34 L82 22 L72 40 L88 44 L74 52 L95 58 L68 64 L74 76 L56 70 L53 95 L47 95 L44 70 L26 76 L32 64 L5 58 L26 52 L12 44 L28 40 L18 22 L42 34 L38 18 L46 24 Z' fill='%23D9731A'/%3E%3C/svg%3E">
+<title>الإعدادات السريعة</title>
+<style>@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-800-900.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Display';src:url('./assets/fonts/thmanyah-display-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Display';src:url('./assets/fonts/thmanyah-display-800-900.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap}
+body{margin:0;font-family:'Thmanyah Sans',system-ui,sans-serif}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+@keyframes leafA{from{transform:translate3d(0,-200px,0) rotate(0deg)}to{transform:translate3d(-150px,1300px,0) rotate(430deg)}}
+@keyframes leafB{from{transform:translate3d(0,-200px,0) rotate(20deg)}to{transform:translate3d(135px,1300px,0) rotate(-380deg)}}
+@keyframes leafC{from{transform:translate3d(0,-200px,0) rotate(-15deg)}to{transform:translate3d(-60px,1300px,0) rotate(265deg)}}
+@keyframes leafD{from{transform:translate3d(0,-200px,0) rotate(45deg)}to{transform:translate3d(205px,1300px,0) rotate(505deg)}}
+@keyframes leafE{from{transform:translate3d(0,-200px,0) rotate(-40deg)}to{transform:translate3d(-225px,1300px,0) rotate(-305deg)}}</style>
+<style>html, body { margin: 0; height: 100%; background: #0B0906; overflow: hidden; }
+#dc-stage {
+  position: absolute; top: 50%; left: 50%;
+  width: 1920px; height: 1080px; margin: -540px 0 0 -960px;
+  transform-origin: center center;
+}</style>
+</head>
+<body>
+
+<div id="dc-stage"><div id="dc-root"></div></div>
+
+<template id="dc-template">
+<div style="--gold: {{accent}}; {{theme}} width: 1920px; height: 1080px; box-sizing: border-box; padding: 44px 80px; direction: rtl; position: relative; overflow: hidden; color: var(--ink); background: radial-gradient(1020px 700px at 92% -10%, rgba(233,162,60,0.30), transparent 64%), radial-gradient(900px 640px at 4% 108%, rgba(125,140,74,0.20), transparent 62%), var(--bg)">
+
+<style>
+@keyframes leafA { from { transform: translate3d(0,-200px,0) rotate(0deg) } to { transform: translate3d(-150px,1300px,0) rotate(430deg) } }
+@keyframes leafB { from { transform: translate3d(0,-200px,0) rotate(20deg) } to { transform: translate3d(135px,1300px,0) rotate(-380deg) } }
+@keyframes leafC { from { transform: translate3d(0,-200px,0) rotate(-15deg) } to { transform: translate3d(-60px,1300px,0) rotate(265deg) } }
+@keyframes leafD { from { transform: translate3d(0,-200px,0) rotate(45deg) } to { transform: translate3d(205px,1300px,0) rotate(505deg) } }
+@keyframes leafE { from { transform: translate3d(0,-200px,0) rotate(-40deg) } to { transform: translate3d(-225px,1300px,0) rotate(-305deg) } }
+</style>
+
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0">
+<sc-for list="{{leaves}}" as="lf" hint-placeholder-count="14">
+<div style="{{lf.style}}">
+<sc-if value="{{lf.maple}}" hint-placeholder-val="{{true}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 5 L54 24 L62 18 L58 34 L82 22 L72 40 L88 44 L74 52 L95 58 L68 64 L74 76 L56 70 L53 95 L47 95 L44 70 L26 76 L32 64 L5 58 L26 52 L12 44 L28 40 L18 22 L42 34 L38 18 L46 24 Z" fill="{{lf.color}}"/><path d="M50 93V40M50 54L79 29M50 54L21 29M50 68L86 57M50 68L14 57" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+<sc-if value="{{lf.long}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 3C64 20 75 42 75 60 75 81 63 95 50 97 37 95 25 81 25 60 25 42 36 20 50 3Z" fill="{{lf.color}}"/><path d="M50 95V8M50 70L70 55M50 70L30 55M50 50L72 38M50 50L28 38" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+<sc-if value="{{lf.round}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 6C74 16 90 36 86 56 82 76 66 90 50 96 34 90 18 76 14 56 10 36 26 16 50 6Z" fill="{{lf.color}}"/><path d="M50 94V12M50 60L76 44M50 60L24 44M50 78L70 66M50 78L30 66" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"/></svg>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+<div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; gap: 30px">
+
+<div style="display: flex; align-items: center; justify-content: space-between; height: 80px; flex-shrink: 0">
+<div style="display: flex; align-items: center; gap: 22px">
+<a href="index.html" aria-label="العودة إلى الشاشة الرئيسية" style="width: 66px; height: 66px; border-radius: 33px; background: var(--card); border: 2px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink); flex-shrink: 0">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M11 5l-7 7 7 7"/></svg>
+</a>
+<span style="font-family: 'Thmanyah Display', serif; font-size: 42px; font-weight: 800">الإعدادات السريعة</span>
+</div>
+<span style="font-family: 'Thmanyah Display', serif; font-size: 44px; font-weight: 800; letter-spacing: 1px">{{clock}}</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 16px; flex-shrink: 0">
+<span style="font-size: 29px; font-weight: 800">وضع الصورة</span>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px">
+<button style="height: 190px; border-radius: 36px; border: 4px solid var(--gold-line); background: var(--gold); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-shadow: 0 16px 36px rgba(200,140,40,0.34)">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>
+<span style="font-size: 28px; font-weight: 800">سينما</span>
+</button>
+<button style="height: 190px; border-radius: 36px; border: 2px solid var(--line); background: var(--card); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-shadow: 0 10px 24px rgba(60,40,15,0.06)">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--ic-amber)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 12.5h4M9 10.5v4"/></svg>
+<span style="font-size: 28px; font-weight: 700">ألعاب</span>
+</button>
+<button style="height: 190px; border-radius: 36px; border: 2px solid var(--line); background: var(--card); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-shadow: 0 10px 24px rgba(60,40,15,0.06)">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--olive-solid)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+<span style="font-size: 28px; font-weight: 700">رياضة</span>
+</button>
+<button style="height: 190px; border-radius: 36px; border: 2px solid var(--line); background: var(--card); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; box-shadow: 0 10px 24px rgba(60,40,15,0.06)">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--ic-plum)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+<span style="font-size: 28px; font-weight: 700">قياسي</span>
+</button>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; flex-shrink: 0">
+
+<div style="border-radius: 36px; background: var(--card); border: 2px solid var(--line); box-shadow: 0 12px 30px rgba(60,40,15,0.06); padding: 32px 40px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 30px; font-weight: 800">السطوع</span>
+<span style="font-size: 30px; font-weight: 800; color: var(--accent-ink)">٧٠</span>
+</div>
+<div style="height: 16px; border-radius: 8px; background: var(--track-bg)">
+<div style="width: 70%; height: 16px; border-radius: 8px; background: linear-gradient(90deg, var(--gold), #CC6B3E)"></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px">
+<span style="font-size: 30px; font-weight: 800">مستوى الصوت</span>
+<span style="font-size: 30px; font-weight: 800; color: var(--accent-ink)">٣٨</span>
+</div>
+<div style="height: 16px; border-radius: 8px; background: var(--track-bg)">
+<div style="width: 38%; height: 16px; border-radius: 8px; background: linear-gradient(90deg, var(--gold), #CC6B3E)"></div>
+</div>
+</div>
+
+<div style="border-radius: 36px; background: var(--card); border: 2px solid var(--line); box-shadow: 0 12px 30px rgba(60,40,15,0.06); padding: 32px 40px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 28px; font-weight: 700">حماية العين</span>
+<div role="img" aria-label="مفعّل" style="width: 88px; height: 48px; border-radius: 24px; background: var(--olive-solid); position: relative"><div style="position: absolute; right: 6px; top: 6px; width: 36px; height: 36px; border-radius: 18px; background: var(--card)"></div></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 28px; font-weight: 700">إيقاف الشاشة تلقائيًا</span>
+<div role="img" aria-label="مفعّل" style="width: 88px; height: 48px; border-radius: 24px; background: var(--olive-solid); position: relative"><div style="position: absolute; right: 6px; top: 6px; width: 36px; height: 36px; border-radius: 18px; background: var(--card)"></div></div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 28px; font-weight: 700">الوضع الليلي — {{themeLabel}}</span>
+<button onClick="{{onTheme}}" aria-label="تبديل الوضع الليلي" style="{{themeTrack}}"><div style="{{themeKnob}}"></div></button>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 28px; font-weight: 700">شاشة التوقف</span>
+<div role="img" aria-label="متوقف" style="width: 88px; height: 48px; border-radius: 24px; background: var(--toggle-off); position: relative"><div style="position: absolute; left: 6px; top: 6px; width: 36px; height: 36px; border-radius: 18px; background: var(--card)"></div></div>
+</div>
+</div>
+
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; height: 72px; flex-shrink: 0">
+<div style="display: flex; gap: 14px">
+<button style="height: 62px; padding: 0 28px; border-radius: 31px; border: 2px solid var(--line); background: var(--card); color: var(--ink); font-size: 24px; font-weight: 700">كل الإعدادات</button>
+<button style="height: 62px; padding: 0 28px; border-radius: 31px; border: 2px solid var(--line); background: var(--card); color: var(--ink); font-size: 24px; font-weight: 700">الشبكة</button>
+<button style="height: 62px; padding: 0 28px; border-radius: 31px; border: 2px solid var(--line); background: var(--card); color: var(--ink); font-size: 24px; font-weight: 700">الإدخال</button>
+</div>
+<span style="font-size: 22px; font-weight: 500; color: var(--muted)">اضغط سهم اليسار للعودة إلى صفحة العائلة</span>
+</div>
+
+</div>
+
+<a href="family.html" aria-label="العودة إلى مهام ومواعيد العائلة" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 50px; height: 250px; box-sizing: border-box; border-radius: 0 26px 26px 0; background: var(--card); border: 2px solid var(--line); border-left: 0; display: flex; align-items: center; justify-content: center; color: var(--ink); z-index: 6; box-shadow: 6px 0 20px rgba(90,45,10,0.10)">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+</a>
+
+</div>
+</template>
+
+<script src="./assets/runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { dark: false };
+  }
+
+  themeVars() {
+    return this.state.dark
+      ? '--bg:#15110C;--card:#241D15;--card-soft:#1D1710;--line:#3C3024;--ink:#F4EADC;--muted:#B6A58B;--accent-ink:#F0B45C;--gold-line:#A86A1C;--olive:#8ED9B0;--olive-solid:#35A06C;--olive-muted:#74C39A;--olive-bg:#0E261A;--olive-bg2:#091C13;--olive-line:#235840;--olive-tint:#17351F;--tile-line:#27573E;--tile-name:#ACDCC2;--tile-time:#E2F5EA;--tile-next:#1C3E2B;--input-line:#4A3D2C;--pop-line:#8A6A2A;--sand:#3E3018;--cal-line:#4C3C20;--cell-line:#3A2F22;--cell-num:#E6DAC6;--done-bg:#15301F;--done-line:#2A553C;--check-line:#4E4232;--who-bg:#4E3C1C;--who-line:#6E5526;--mic-bg:#3A241A;--mic-line:#D1703F;--mic-fg:#F0A17A;--cancel-line:#463A2A;--track-bg:#322718;--toggle-off:#3E3426;--pill-line:#6A5428;--ic-red:#E0796A;--ic-forest:#84C291;--ic-teal:#7FC0BC;--ic-amber:#E09A4A;--ic-plum:#CB8CAC;--ic-stone:#BCAA94;--card-tr:rgba(36,29,21,0.92);--tile-tr:rgba(20,50,35,0.92);--prayer-a:rgba(14,38,26,0.94);--prayer-b:rgba(9,28,19,0.94);--hero-a:#4A2C12;--hero-b:#3A2010;--hero-c:#2A1409;--hero-ink:#F7E9D6;--hero-blob:rgba(255,226,178,0.07);--hero-blob2:rgba(255,226,178,0.05);--hero-card:rgba(46,32,19,0.94);--hero-card-line:rgba(240,180,92,0.26);--hero-accent:#F2BC6E;--hero-sub:#C4AD8E;--chip-red-bg:#4A2318;--chip-red-fg:#F0A88E;--chip-gold-bg:#4A3618;--chip-gold-fg:#F2BC6E;--chip-olive-bg:#27341A;--chip-olive-fg:#B4CE7E;--chip-plum-bg:#3A2430;--chip-plum-fg:#E0A8C4;'
+      : '--bg:#FBF4E8;--card:#FFFDF8;--card-soft:#FDF8EF;--line:#E8DAC4;--ink:#2E1A0B;--muted:#7A6248;--accent-ink:#8A4F0A;--gold-line:#B8701A;--olive:#46581F;--olive-solid:#4A5D23;--olive-muted:#5A6B30;--olive-bg:#F4F2E2;--olive-bg2:#E9E9D2;--olive-line:#C5C9A0;--olive-tint:#E9EDD4;--tile-line:#D9DCBD;--tile-name:#4A5A2C;--tile-time:#26331A;--tile-next:#FFFBF2;--input-line:#D8C9AE;--pop-line:#E0AE55;--sand:#F7E3BC;--cal-line:#E8CFA0;--cell-line:#EFE4D1;--cell-num:#45321C;--done-bg:#F1F3E2;--done-line:#CDD4AA;--check-line:#C9B9A0;--who-bg:#F2CE8E;--who-line:#DBAF5F;--mic-bg:#FBE7DA;--mic-line:#A8481F;--mic-fg:#8A3A16;--cancel-line:#E3D6C0;--track-bg:#F0E6D4;--toggle-off:#DACFBC;--pill-line:#E3CB99;--ic-red:#9B2C2C;--ic-forest:#2F5233;--ic-teal:#35605E;--ic-amber:#B45309;--ic-plum:#7A3353;--ic-stone:#6B5A4A;--card-tr:rgba(255,253,248,0.92);--tile-tr:rgba(255,253,246,0.92);--prayer-a:rgba(244,242,226,0.94);--prayer-b:rgba(233,233,210,0.94);--hero-a:#F2B65C;--hero-b:#E28B45;--hero-c:#CC6B3E;--hero-ink:#2E1A0B;--hero-blob:rgba(255,248,232,0.26);--hero-blob2:rgba(255,248,232,0.20);--hero-card:rgba(255,251,243,0.94);--hero-card-line:rgba(138,79,10,0.30);--hero-accent:#8A4F0A;--hero-sub:#6E573F;--chip-red-bg:#FBE2D6;--chip-red-fg:#9A3A14;--chip-gold-bg:#FBE6BC;--chip-gold-fg:#8A4F0A;--chip-olive-bg:#EDF0DC;--chip-olive-fg:#46581F;--chip-plum-bg:#F6E6EC;--chip-plum-fg:#6E3450;';
+  }
+
+  readTheme() {
+    try { return localStorage.getItem('lgc2-theme') === 'dark'; } catch (e) { return false; }
+  }
+
+  writeTheme(d) {
+    try { localStorage.setItem('lgc2-theme', d ? 'dark' : 'light'); } catch (e) {}
+  }
+
+  componentDidMount() {
+    if (this.readTheme() && !this.state.dark) this.setState({ dark: true });
+  }
+
+  buildLeaves() {
+    var palette = [
+      ['#D9731A', '#8A3B0F'],
+      ['#C2410C', '#6E2A10'],
+      ['#E3A52E', '#A05A14'],
+      ['#B4471F', '#5E1F0A'],
+      ['#CA8A04', '#8A5A0A'],
+      ['#9A3412', '#5A1C08'],
+      ['#E08A2B', '#9A4E12'],
+      ['#8A8F3F', '#4A5520']
+    ];
+    var kfs = ['leafA', 'leafB', 'leafC', 'leafD', 'leafE'];
+    var out = [];
+    var epoch = Date.now() / 1000;
+    for (var i = 0; i < 14; i++) {
+      var p = palette[(i * 3 + 1) % palette.length];
+      var size = 48 + ((i * 43) % 44);
+      var dur = 20 + ((i * 239) % 18);
+      var delay = (((i * 23) + epoch) % dur).toFixed(2);
+      var op = (0.46 + (((i * 21) % 26) / 100)).toFixed(2);
+      out.push({
+        maple: i % 3 === 0,
+        long: i % 3 === 1,
+        round: i % 3 === 2,
+        color: p[0],
+        vein: p[1],
+        style: 'position:absolute;top:0;left:' + ((i * 239) % 1870) + 'px;width:' + size + 'px;height:' + size
+          + 'px;opacity:' + op + ';will-change:transform;animation-name:' + kfs[i % 5]
+          + ';animation-duration:' + dur + 's;animation-timing-function:linear;animation-delay:-' + delay
+          + 's;animation-iteration-count:infinite;animation-fill-mode:both'
+      });
+    }
+    return out;
+  }
+
+  renderVals() {
+    var now = new Date();
+    var map = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+    var hh = now.getHours(), mm = now.getMinutes();
+    var suffix = hh < 12 ? 'ص' : 'م';
+    var h12 = hh % 12;
+    if (h12 === 0) h12 = 12;
+    var clock = String(h12 + ':' + (mm < 10 ? '0' + mm : mm)).replace(/[0-9]/g, function (d) { return map[+d]; }) + ' ' + suffix;
+    var self = this;
+    return {
+      accent: this.props.accent ?? '#E9A23C',
+      clock: clock,
+      leaves: this.buildLeaves(),
+      theme: this.themeVars(),
+      dark: this.state.dark,
+      light: !this.state.dark,
+      themeLabel: this.state.dark ? 'مفعّل' : 'متوقف',
+      themeTrack: 'width: 88px; height: 48px; border-radius: 24px; flex-shrink: 0; border: 0; padding: 0; position: relative; cursor: pointer; background: ' + (this.state.dark ? 'var(--olive-solid)' : 'var(--toggle-off)') + ';',
+      themeKnob: 'position: absolute; top: 6px; width: 36px; height: 36px; border-radius: 18px; background: var(--card); ' + (this.state.dark ? 'right: 6px;' : 'left: 6px;'),
+      onTheme: function () {
+        var d = !self.state.dark;
+        self.writeTheme(d);
+        self.setState({ dark: d });
+      }
+    };
+  }
+}
+
+mountDC(Component, { accent: '#E9A23C' });
+</script>
+</body>
+</html>

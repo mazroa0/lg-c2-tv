@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L54 24 L62 18 L58 34 L82 22 L72 40 L88 44 L74 52 L95 58 L68 64 L74 76 L56 70 L53 95 L47 95 L44 70 L26 76 L32 64 L5 58 L26 52 L12 44 L28 40 L18 22 L42 34 L38 18 L46 24 Z' fill='%23D9731A'/%3E%3C/svg%3E">
+<title>الشاشة الرئيسية للعائلة</title>
+<style>@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Sans';src:url('./assets/fonts/thmanyah-sans-800-900.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Display';src:url('./assets/fonts/thmanyah-display-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Thmanyah Display';src:url('./assets/fonts/thmanyah-display-800-900.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap}
+body{margin:0;font-family:'Thmanyah Sans',system-ui,sans-serif}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+@keyframes leafA{from{transform:translate3d(0,-200px,0) rotate(0deg)}to{transform:translate3d(-150px,1300px,0) rotate(430deg)}}
+@keyframes leafB{from{transform:translate3d(0,-200px,0) rotate(20deg)}to{transform:translate3d(135px,1300px,0) rotate(-380deg)}}
+@keyframes leafC{from{transform:translate3d(0,-200px,0) rotate(-15deg)}to{transform:translate3d(-60px,1300px,0) rotate(265deg)}}
+@keyframes leafD{from{transform:translate3d(0,-200px,0) rotate(45deg)}to{transform:translate3d(205px,1300px,0) rotate(505deg)}}
+@keyframes leafE{from{transform:translate3d(0,-200px,0) rotate(-40deg)}to{transform:translate3d(-225px,1300px,0) rotate(-305deg)}}</style>
+<style>html, body { margin: 0; height: 100%; background: #0B0906; overflow: hidden; }
+#dc-stage {
+  position: absolute; top: 50%; left: 50%;
+  width: 1920px; height: 1080px; margin: -540px 0 0 -960px;
+  transform-origin: center center;
+}</style>
+</head>
+<body>
+
+<div id="dc-stage"><div id="dc-root"></div></div>
+
+<template id="dc-template">
+<div style="--gold: {{accent}}; {{theme}} width: 1920px; height: 1080px; box-sizing: border-box; padding: 44px 80px; direction: rtl; position: relative; overflow: hidden; color: var(--ink); background: radial-gradient(1020px 700px at 92% -10%, rgba(233,162,60,0.34), transparent 64%), radial-gradient(900px 640px at 2% 108%, rgba(180,70,35,0.20), transparent 62%), radial-gradient(780px 560px at 46% 44%, rgba(125,140,74,0.16), transparent 70%), var(--bg)">
+
+<style>
+@keyframes leafA { from { transform: translate3d(0,-200px,0) rotate(0deg) } to { transform: translate3d(-150px,1300px,0) rotate(430deg) } }
+@keyframes leafB { from { transform: translate3d(0,-200px,0) rotate(20deg) } to { transform: translate3d(135px,1300px,0) rotate(-380deg) } }
+@keyframes leafC { from { transform: translate3d(0,-200px,0) rotate(-15deg) } to { transform: translate3d(-60px,1300px,0) rotate(265deg) } }
+@keyframes leafD { from { transform: translate3d(0,-200px,0) rotate(45deg) } to { transform: translate3d(205px,1300px,0) rotate(505deg) } }
+@keyframes leafE { from { transform: translate3d(0,-200px,0) rotate(-40deg) } to { transform: translate3d(-225px,1300px,0) rotate(-305deg) } }
+</style><div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; gap: 20px">
+
+<div style="display: flex; align-items: center; justify-content: space-between; height: 84px; flex-shrink: 0">
+<div style="display: flex; align-items: center; gap: 22px">
+<div style="width: 72px; height: 72px; border-radius: 24px; background: linear-gradient(135deg, var(--gold), #CC6B3E); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 10px 24px rgba(180,80,40,0.28)">
+<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v10h13V10"></path><path d="M10 20v-5h4v5"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Thmanyah Display', serif; font-size: 40px; font-weight: 800; line-height: 1.1">{{greeting}}</span>
+<span style="font-size: 23px; font-weight: 500; color: var(--muted)">{{dateLine}}</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 18px">
+<span id="pt-clock" style="font-family: 'Thmanyah Display', serif; font-size: 52px; font-weight: 800; letter-spacing: 1px">{{clock}}</span>
+<button aria-label="البحث" style="width: 66px; height: 66px; border-radius: 33px; border: 2px solid var(--line); background: var(--card); color: var(--ink); display: flex; align-items: center; justify-content: center">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+</button>
+<button aria-label="ملفات العائلة" style="width: 66px; height: 66px; border-radius: 33px; border: 2px solid var(--line); background: var(--card); color: var(--ink); display: flex; align-items: center; justify-content: center">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.4"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><circle cx="17.5" cy="9" r="2.6"></circle><path d="M16 20a6 6 0 0 1 5.5-5.9"></path></svg>
+</button>
+<button aria-label="الإعدادات" style="width: 66px; height: 66px; border-radius: 33px; border: 2px solid var(--line); background: var(--card); color: var(--ink); display: flex; align-items: center; justify-content: center">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path><circle cx="12" cy="12" r="3.5"></circle></svg>
+</button>
+<button onClick="{{onTheme}}" aria-label="تبديل الوضع الليلي" style="width: 66px; height: 66px; border-radius: 33px; border: 2px solid var(--gold-line); background: var(--sand); color: var(--accent-ink); display: flex; align-items: center; justify-content: center">
+<sc-if value="{{light}}" hint-placeholder-val="{{true}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 14.5A7.4 7.4 0 0 1 9.8 5.8 7.2 7.2 0 1 0 18.5 14.5z"></path></svg>
+</sc-if>
+<sc-if value="{{dark}}" hint-placeholder-val="{{false}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.4M12 19.2v2.4M2.4 12h2.4M19.2 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M5.2 18.8l1.7-1.7M17.1 6.9l1.7-1.7"></path></svg>
+</sc-if>
+</button>
+</div>
+</div>
+
+<div style="height: 246px; flex-shrink: 0; border-radius: 36px; padding: 20px 28px; box-sizing: border-box; background: linear-gradient(170deg, var(--prayer-a) 0%, var(--prayer-b) 100%); border: 2px solid var(--olive-line); box-shadow: 0 14px 34px rgba(60,40,15,0.08); display: flex; flex-direction: column; gap: 12px">
+
+<div style="display: flex; align-items: center; justify-content: space-between; height: 32px; flex-shrink: 0">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--olive)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"></path><path d="M6 20V9l6-5 6 5v11"></path><path d="M12 20v-4"></path></svg>
+<span style="font-size: 25px; font-weight: 800; color: var(--olive)">مواقيت الصلاة — الرياض</span>
+</div>
+<span style="font-size: 19px; font-weight: 700; color: var(--olive-muted)">{{hijriLabel}}</span>
+</div>
+
+<div style="display: flex; gap: 14px; height: 158px; flex-shrink: 0">
+
+<div style="width: 332px; flex-shrink: 0; border-radius: 26px; background: linear-gradient(135deg, #F2B65C, #DD8C2B); border: 2px solid var(--gold-line); box-shadow: 0 10px 24px rgba(180,110,25,0.28); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--ink)">
+<span style="font-size: 21px; font-weight: 700">متبقٍ على {{nextName}}</span>
+<span id="pt-countdown" style="font-family: 'Thmanyah Display', serif; font-size: 54px; font-weight: 900; letter-spacing: 2px; line-height: 1.15">{{countdown}}</span>
+<span style="font-size: 19px; font-weight: 700">ساعة · دقيقة · ثانية</span>
+</div>
+
+<div style="{{p0.tileStyle}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{p0.icon}}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 13.5A6.8 6.8 0 0 1 9.8 5.8 6.6 6.6 0 1 0 17.5 13.5z"></path><path d="M4 21h16"></path></svg>
+<span style="{{p0.nameStyle}}">{{p0.name}}</span>
+<span style="{{p0.timeStyle}}">{{p0.time}}</span>
+</div>
+
+<div style="{{p1.tileStyle}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{p1.icon}}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"></path><path d="M7.5 19a4.5 4.5 0 0 1 9 0"></path><path d="M12 4.5v3M5.8 7.3l2 2M18.2 7.3l-2 2"></path></svg>
+<span style="{{p1.nameStyle}}">{{p1.name}}</span>
+<span style="{{p1.timeStyle}}">{{p1.time}}</span>
+</div>
+
+<div style="{{p2.tileStyle}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{p2.icon}}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4"></circle><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"></path></svg>
+<span style="{{p2.nameStyle}}">{{p2.name}}</span>
+<span style="{{p2.timeStyle}}">{{p2.time}}</span>
+</div>
+
+<div style="{{p3.tileStyle}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{p3.icon}}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12.5" r="4"></circle><path d="M12 4.5v2.2M3.5 12.5H5.7M18.3 12.5h2.2M6.2 6.7l1.6 1.6M17.8 6.7l-1.6 1.6"></path><path d="M3 20.5h18"></path></svg>
+<span style="{{p3.nameStyle}}">{{p3.name}}</span>
+<span style="{{p3.timeStyle}}">{{p3.time}}</span>
+</div>
+
+<div style="{{p4.tileStyle}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{p4.icon}}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19h18"></path><path d="M7.5 19a4.5 4.5 0 0 1 9 0"></path><path d="M12 9.5v-5M9.8 7l2.2 2.3L14.2 7"></path></svg>
+<span style="{{p4.nameStyle}}">{{p4.name}}</span>
+<span style="{{p4.timeStyle}}">{{p4.time}}</span>
+</div>
+
+<div style="{{p5.tileStyle}}">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{p5.icon}}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.5 14.5A7.4 7.4 0 0 1 9.8 5.8 7.2 7.2 0 1 0 18.5 14.5z"></path><path d="M18 3.5v3M16.5 5h3"></path></svg>
+<span style="{{p5.nameStyle}}">{{p5.name}}</span>
+<span style="{{p5.timeStyle}}">{{p5.time}}</span>
+</div>
+
+</div>
+</div>
+
+<div style="height: 238px; flex-shrink: 0; position: relative; border-radius: 36px; overflow: hidden; box-shadow: 0 16px 40px rgba(180,90,45,0.28); display: flex; flex-direction: column; gap: 10px; padding: 18px 28px; box-sizing: border-box; background: linear-gradient(118deg, var(--hero-a) 0%, var(--hero-b) 49%, var(--hero-c) 100%); border-style: none; border-width: 1px; border-color: #141413">
+<div style="position: absolute; left: -150px; top: -190px; width: 430px; height: 430px; border-radius: 215px; background: var(--hero-blob)"></div>
+<div style="position: absolute; left: 240px; bottom: -220px; width: 300px; height: 300px; border-radius: 150px; background: var(--hero-blob2)"></div>
+
+<div style="position: relative; display: flex; align-items: center; justify-content: space-between; height: 34px; flex-shrink: 0; color: var(--hero-ink)">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--hero-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v3.4M12 17.6V21M3 12h3.4M17.6 12H21"></path><path d="M12 8.6 15.2 11l-1.2 3.8h-4L8.8 11z"></path></svg>
+<span style="font-family: 'Thmanyah Display', serif; font-size: 30px; font-weight: 900">أبرز مباريات الأسبوع</span>
+</div>
+<span style="font-size: 19px; font-weight: 700">بتوقيت الرياض</span>
+</div>
+
+<div style="position: relative; display: flex; gap: 14px; height: 152px; flex-shrink: 0">
+<sc-for list="{{matches}}" as="m" hint-placeholder-count="5">
+<div style="flex: 1; min-width: 0; border-radius: 26px; background: var(--hero-card); border: 2px solid var(--hero-card-line); box-shadow: 0 8px 20px rgba(90,45,10,0.12); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; padding: 0 12px; box-sizing: border-box">
+<span style="{{m.compStyle}}">{{m.comp}}</span>
+<span style="font-family: 'Thmanyah Display', serif; font-size: 21px; font-weight: 900; color: var(--hero-ink); text-align: center; line-height: 1.28">{{m.teams}}</span>
+<span style="font-family: 'Thmanyah Display', serif; font-size: 28px; font-weight: 900; color: var(--hero-accent); line-height: 1">{{m.time}}</span>
+<span style="font-size: 16px; font-weight: 700; color: var(--hero-sub)">{{m.dayDate}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px; flex-shrink: 0">
+<span style="font-size: 26px; font-weight: 800">الأكثر استخدامًا</span>
+<div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 18px">
+
+<button style="height: 148px; border-radius: 28px; border: 4px solid var(--gold-line); background: var(--gold); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 14px 32px rgba(200,140,40,0.38)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"></rect><path d="m10.5 9.5 5 2.5-5 2.5z"></path></svg>
+<span style="font-size: 21px; font-weight: 800">يوتيوب</span>
+</button>
+
+<button style="height: 148px; border-radius: 28px; border: 2px solid var(--line); background: var(--card-tr); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 20px rgba(60,40,15,0.06)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--ic-red)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8.5 17V7l7 10V7"></path></svg>
+<span style="font-size: 21px; font-weight: 700">نتفلكس</span>
+</button>
+
+<button style="height: 148px; border-radius: 28px; border: 2px solid var(--line); background: var(--card-tr); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 20px rgba(60,40,15,0.06)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--olive-solid)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="4"></rect><path d="M12 8.5v7M8.5 12h7"></path></svg>
+<span style="font-size: 21px; font-weight: 700">شاهد</span>
+</button>
+
+<button style="height: 148px; border-radius: 28px; border: 2px solid var(--line); background: var(--card-tr); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 20px rgba(60,40,15,0.06)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--ic-forest)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M8 7.5h7M8 11h7"></path></svg>
+<span style="font-size: 21px; font-weight: 700">القرآن الكريم</span>
+</button>
+
+<button style="height: 148px; border-radius: 28px; border: 2px solid var(--line); background: var(--card-tr); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 20px rgba(60,40,15,0.06)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--ic-teal)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
+<span style="font-size: 21px; font-weight: 700">المتصفح</span>
+</button>
+
+<button style="height: 148px; border-radius: 28px; border: 2px solid var(--line); background: var(--card-tr); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 20px rgba(60,40,15,0.06)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--ic-amber)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L17 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><circle cx="12" cy="13" r="3.6"></circle></svg>
+<span style="font-size: 21px; font-weight: 700">صور العائلة</span>
+</button>
+
+<button style="height: 148px; border-radius: 28px; border: 2px solid var(--line); background: var(--card-tr); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 20px rgba(60,40,15,0.06)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--ic-plum)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l11-2v12"></path><circle cx="6.5" cy="18" r="2.5"></circle><circle cx="17.5" cy="16" r="2.5"></circle></svg>
+<span style="font-size: 21px; font-weight: 700">الموسيقى</span>
+</button>
+
+<button style="height: 148px; border-radius: 28px; border: 2px solid var(--line); background: var(--card-tr); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 20px rgba(60,40,15,0.06)">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--ic-stone)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="3"></rect><path d="M8 18v2.5M16 18v2.5"></path></svg>
+<span style="font-size: 21px; font-weight: 700">HDMI ١</span>
+</button>
+</div>
+</div>
+
+<a href="family.html" style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; height: 112px; flex-shrink: 0; border-radius: 30px; padding: 0 36px; box-sizing: border-box; background: var(--card-tr); border: 2px solid var(--line); box-shadow: 0 10px 26px rgba(60,40,15,0.07)">
+<div style="display: flex; align-items: center; gap: 24px">
+<div style="width: 68px; height: 68px; border-radius: 22px; background: var(--olive-tint); display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--olive)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 4 4 11-10"></path></svg>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 26px; font-weight: 800">مهام ومواعيد العائلة</span>
+<span style="font-size: 20px; font-weight: 500; color: var(--muted)">{{tasksHint}}</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 16px; color: var(--accent-ink)">
+<span style="font-size: 22px; font-weight: 800">اضغط سهم اليمين ←</span>
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H5M13 5l7 7-7 7"></path></svg>
+</div>
+</a>
+
+</div>
+
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0">
+<sc-for list="{{leavesBack}}" as="lf" hint-placeholder-count="16">
+<div style="{{lf.style}}">
+<sc-if value="{{lf.maple}}" hint-placeholder-val="{{true}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 5 L54 24 L62 18 L58 34 L82 22 L72 40 L88 44 L74 52 L95 58 L68 64 L74 76 L56 70 L53 95 L47 95 L44 70 L26 76 L32 64 L5 58 L26 52 L12 44 L28 40 L18 22 L42 34 L38 18 L46 24 Z" fill="{{lf.color}}"></path><path d="M50 93V40M50 54L79 29M50 54L21 29M50 68L86 57M50 68L14 57" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"></path></svg>
+</sc-if>
+<sc-if value="{{lf.long}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 3C64 20 75 42 75 60 75 81 63 95 50 97 37 95 25 81 25 60 25 42 36 20 50 3Z" fill="{{lf.color}}"></path><path d="M50 95V8M50 70L70 55M50 70L30 55M50 50L72 38M50 50L28 38" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"></path></svg>
+</sc-if>
+<sc-if value="{{lf.round}}" hint-placeholder-val="{{false}}">
+<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><path d="M50 6C74 16 90 36 86 56 82 76 66 90 50 96 34 90 18 76 14 56 10 36 26 16 50 6Z" fill="{{lf.color}}"></path><path d="M50 94V12M50 60L76 44M50 60L24 44M50 78L70 66M50 78L30 66" fill="none" stroke="{{lf.vein}}" stroke-width="3.2" stroke-linecap="round"></path></svg>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+
+
+
+
+<a href="family.html" aria-label="الانتقال إلى مهام ومواعيد العائلة" style="position: absolute; right: 0; top: 414px; height: 238px; width: 50px; border-radius: 26px 0 0 26px; background: linear-gradient(180deg, var(--gold), #CC6B3E); display: flex; align-items: center; justify-content: center; color: var(--ink); z-index: 6; box-shadow: -6px 0 20px rgba(180,90,45,0.28)">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+</a>
+
+</div>
+</template>
+
+<script src="./assets/runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { dark: false };
+  }
+
+  themeVars() {
+    return this.state.dark
+      ? '--bg:#15110C;--card:#241D15;--card-soft:#1D1710;--line:#3C3024;--ink:#F4EADC;--muted:#B6A58B;--accent-ink:#F0B45C;--gold-line:#A86A1C;--olive:#8ED9B0;--olive-solid:#35A06C;--olive-muted:#74C39A;--olive-bg:#0E261A;--olive-bg2:#091C13;--olive-line:#235840;--olive-tint:#17351F;--tile-line:#27573E;--tile-name:#ACDCC2;--tile-time:#E2F5EA;--tile-next:#1C3E2B;--input-line:#4A3D2C;--pop-line:#8A6A2A;--sand:#3E3018;--cal-line:#4C3C20;--cell-line:#3A2F22;--cell-num:#E6DAC6;--done-bg:#15301F;--done-line:#2A553C;--check-line:#4E4232;--who-bg:#4E3C1C;--who-line:#6E5526;--mic-bg:#3A241A;--mic-line:#D1703F;--mic-fg:#F0A17A;--cancel-line:#463A2A;--track-bg:#322718;--toggle-off:#3E3426;--pill-line:#6A5428;--ic-red:#E0796A;--ic-forest:#84C291;--ic-teal:#7FC0BC;--ic-amber:#E09A4A;--ic-plum:#CB8CAC;--ic-stone:#BCAA94;--card-tr:rgba(36,29,21,0.92);--tile-tr:rgba(20,50,35,0.92);--prayer-a:rgba(14,38,26,0.94);--prayer-b:rgba(9,28,19,0.94);--hero-a:#4A2C12;--hero-b:#3A2010;--hero-c:#2A1409;--hero-ink:#F7E9D6;--hero-blob:rgba(255,226,178,0.07);--hero-blob2:rgba(255,226,178,0.05);--hero-card:rgba(46,32,19,0.94);--hero-card-line:rgba(240,180,92,0.26);--hero-accent:#F2BC6E;--hero-sub:#C4AD8E;--chip-red-bg:#4A2318;--chip-red-fg:#F0A88E;--chip-gold-bg:#4A3618;--chip-gold-fg:#F2BC6E;--chip-olive-bg:#27341A;--chip-olive-fg:#B4CE7E;--chip-plum-bg:#3A2430;--chip-plum-fg:#E0A8C4;'
+      : '--bg:#FBF4E8;--card:#FFFDF8;--card-soft:#FDF8EF;--line:#E8DAC4;--ink:#2E1A0B;--muted:#7A6248;--accent-ink:#8A4F0A;--gold-line:#B8701A;--olive:#46581F;--olive-solid:#4A5D23;--olive-muted:#5A6B30;--olive-bg:#F4F2E2;--olive-bg2:#E9E9D2;--olive-line:#C5C9A0;--olive-tint:#E9EDD4;--tile-line:#D9DCBD;--tile-name:#4A5A2C;--tile-time:#26331A;--tile-next:#FFFBF2;--input-line:#D8C9AE;--pop-line:#E0AE55;--sand:#F7E3BC;--cal-line:#E8CFA0;--cell-line:#EFE4D1;--cell-num:#45321C;--done-bg:#F1F3E2;--done-line:#CDD4AA;--check-line:#C9B9A0;--who-bg:#F2CE8E;--who-line:#DBAF5F;--mic-bg:#FBE7DA;--mic-line:#A8481F;--mic-fg:#8A3A16;--cancel-line:#E3D6C0;--track-bg:#F0E6D4;--toggle-off:#DACFBC;--pill-line:#E3CB99;--ic-red:#9B2C2C;--ic-forest:#2F5233;--ic-teal:#35605E;--ic-amber:#B45309;--ic-plum:#7A3353;--ic-stone:#6B5A4A;--card-tr:rgba(255,253,248,0.92);--tile-tr:rgba(255,253,246,0.92);--prayer-a:rgba(244,242,226,0.94);--prayer-b:rgba(233,233,210,0.94);--hero-a:#F2B65C;--hero-b:#E28B45;--hero-c:#CC6B3E;--hero-ink:#2E1A0B;--hero-blob:rgba(255,248,232,0.26);--hero-blob2:rgba(255,248,232,0.20);--hero-card:rgba(255,251,243,0.94);--hero-card-line:rgba(138,79,10,0.30);--hero-accent:#8A4F0A;--hero-sub:#6E573F;--chip-red-bg:#FBE2D6;--chip-red-fg:#9A3A14;--chip-gold-bg:#FBE6BC;--chip-gold-fg:#8A4F0A;--chip-olive-bg:#EDF0DC;--chip-olive-fg:#46581F;--chip-plum-bg:#F6E6EC;--chip-plum-fg:#6E3450;';
+  }
+
+  readTheme() {
+    try { return localStorage.getItem('lgc2-theme') === 'dark'; } catch (e) { return false; }
+  }
+
+  writeTheme(d) {
+    try { localStorage.setItem('lgc2-theme', d ? 'dark' : 'light'); } catch (e) {}
+  }
+
+  componentDidMount() {
+    if (this.readTheme() && !this.state.dark) this.setState({ dark: true });
+    this.timer = setInterval(function () {
+      var t = this.tickValues();
+      var cd = document.getElementById('pt-countdown');
+      if (cd && cd.textContent !== t.countdown) cd.textContent = t.countdown;
+      var ck = document.getElementById('pt-clock');
+      if (ck && ck.textContent !== t.clock) ck.textContent = t.clock;
+      if (t.nextIdx !== this.currentIdx) {
+        this.currentIdx = t.nextIdx;
+        this.forceUpdate();
+      }
+    }.bind(this), 1000);
+  }
+  componentWillUnmount() {
+    if (this.timer) clearInterval(this.timer);
+  }
+
+  fmtClock(h) {
+    var total = Math.round(h * 60);
+    var hh = Math.floor(total / 60) % 24;
+    var mm = total % 60;
+    var suffix = hh < 12 ? 'ص' : 'م';
+    var h12 = hh % 12;
+    if (h12 === 0) h12 = 12;
+    return this.arabicDigits(h12 + ':' + (mm < 10 ? '0' + mm : mm)) + ' ' + suffix;
+  }
+
+  prayerOrder() {
+    return [
+      { key: 'fajr', name: 'الفجر' },
+      { key: 'sunrise', name: 'الشروق' },
+      { key: 'dhuhr', name: 'الظهر' },
+      { key: 'asr', name: 'العصر' },
+      { key: 'maghrib', name: 'المغرب' },
+      { key: 'isha', name: 'العشاء' }
+    ];
+  }
+
+  tickValues() {
+    var now = new Date();
+    var times = this.computePrayers(now);
+    var order = this.prayerOrder();
+    var nowH = now.getHours() + now.getMinutes() / 60 + now.getSeconds() / 3600;
+    var nextIdx = -1;
+    for (var i = 0; i < order.length; i++) {
+      if (times[order[i].key] > nowH) { nextIdx = i; break; }
+    }
+    var remainH, nextName;
+    if (nextIdx >= 0) {
+      remainH = times[order[nextIdx].key] - nowH;
+      nextName = order[nextIdx].name;
+    } else {
+      remainH = 24 - nowH + times.fajr;
+      nextName = 'فجر الغد';
+    }
+    var totalSec = Math.max(0, Math.round(remainH * 3600));
+    var pad = function (n) { return n < 10 ? '0' + n : String(n); };
+    return {
+      now: now,
+      times: times,
+      order: order,
+      nextIdx: nextIdx,
+      nextName: nextName,
+      countdown: this.arabicDigits(pad(Math.floor(totalSec / 3600)) + ':' + pad(Math.floor((totalSec % 3600) / 60)) + ':' + pad(totalSec % 60)),
+      clock: this.fmtClock(now.getHours() + now.getMinutes() / 60)
+    };
+  }
+
+  arabicDigits(str) {
+    var map = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+    return String(str).replace(/[0-9]/g, function (d) { return map[+d]; });
+  }
+
+  buildLeaves(count, spread, minSize, sizeRange, minOp, opRange) {
+    var palette = [
+      ['#D9731A', '#8A3B0F'],
+      ['#C2410C', '#6E2A10'],
+      ['#E3A52E', '#A05A14'],
+      ['#B4471F', '#5E1F0A'],
+      ['#CA8A04', '#8A5A0A'],
+      ['#9A3412', '#5A1C08'],
+      ['#E08A2B', '#9A4E12'],
+      ['#8A8F3F', '#4A5520']
+    ];
+    var kfs = ['leafA', 'leafB', 'leafC', 'leafD', 'leafE'];
+    var out = [];
+    var epoch = Date.now() / 1000;
+    for (var i = 0; i < count; i++) {
+      var p = palette[(i * 3 + 1) % palette.length];
+      var size = minSize + ((i * 47) % sizeRange);
+      var dur = 20 + ((i * spread) % 18);
+      var delay = (((i * 23) + epoch) % dur).toFixed(2);
+      var op = (minOp + (((i * 17) % opRange) / 100)).toFixed(2);
+      out.push({
+        maple: i % 3 === 0,
+        long: i % 3 === 1,
+        round: i % 3 === 2,
+        color: p[0],
+        vein: p[1],
+        style: 'position:absolute;top:0;left:' + ((i * spread) % 1870) + 'px;width:' + size + 'px;height:' + size
+          + 'px;opacity:' + op + ';will-change:transform;animation-name:' + kfs[i % 5]
+          + ';animation-duration:' + dur + 's;animation-timing-function:linear;animation-delay:-' + delay
+          + 's;animation-iteration-count:infinite;animation-fill-mode:both'
+      });
+    }
+    return out;
+  }
+
+  leafLayers() {
+    return {
+      back: this.buildLeaves(16, 211, 46, 44, 0.50, 30),
+      front: this.buildLeaves(10, 331, 62, 50, 0.38, 22)
+    };
+  }
+
+  computePrayers(now) {
+    var lat = 24.7136, lng = 46.6753, tz = 3;
+
+    function dsin(d) { return Math.sin(d * Math.PI / 180); }
+    function dcos(d) { return Math.cos(d * Math.PI / 180); }
+    function dtan(d) { return Math.tan(d * Math.PI / 180); }
+    function darcsin(x) { return Math.asin(x) * 180 / Math.PI; }
+    function darccos(x) { return Math.acos(x) * 180 / Math.PI; }
+    function darctan2(y, x) { return Math.atan2(y, x) * 180 / Math.PI; }
+    function darccot(x) { return Math.atan(1 / x) * 180 / Math.PI; }
+    function fixAngle(a) { a = a - 360 * Math.floor(a / 360); return a < 0 ? a + 360 : a; }
+    function fixHour(a) { a = a - 24 * Math.floor(a / 24); return a < 0 ? a + 24 : a; }
+
+    var y = now.getFullYear(), m = now.getMonth() + 1, d = now.getDate();
+    if (m <= 2) { y -= 1; m += 12; }
+    var A = Math.floor(y / 100);
+    var B = 2 - A + Math.floor(A / 4);
+    var jdate = Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + d + B - 1524.5;
+    jdate = jdate - lng / (15 * 24);
+
+    function sunPosition(jd) {
+      var D = jd - 2451545.0;
+      var g = fixAngle(357.529 + 0.98560028 * D);
+      var q = fixAngle(280.459 + 0.98564736 * D);
+      var L = fixAngle(q + 1.915 * dsin(g) + 0.020 * dsin(2 * g));
+      var e = 23.439 - 0.00000036 * D;
+      var RA = fixHour(darctan2(dcos(e) * dsin(L), dcos(L)) / 15);
+      return { declination: darcsin(dsin(e) * dsin(L)), equation: q / 15 - RA };
+    }
+    function midDay(t) { return fixHour(12 - sunPosition(jdate + t).equation); }
+    function sunAngleTime(angle, t, ccw) {
+      var decl = sunPosition(jdate + t).declination;
+      var noon = midDay(t);
+      var ratio = (-dsin(angle) - dsin(decl) * dsin(lat)) / (dcos(decl) * dcos(lat));
+      if (ratio > 1) ratio = 1;
+      if (ratio < -1) ratio = -1;
+      var v = darccos(ratio) / 15;
+      return noon + (ccw ? -v : v);
+    }
+    function asrTime(factor, t) {
+      var decl = sunPosition(jdate + t).declination;
+      return sunAngleTime(-darccot(factor + dtan(Math.abs(lat - decl))), t, false);
+    }
+
+    var t = { fajr: 5 / 24, sunrise: 6 / 24, dhuhr: 12 / 24, asr: 13 / 24, sunset: 18 / 24 };
+    for (var i = 0; i < 3; i++) {
+      t = {
+        fajr: sunAngleTime(18.5, t.fajr, true),
+        sunrise: sunAngleTime(0.833, t.sunrise, true),
+        dhuhr: midDay(t.dhuhr),
+        asr: asrTime(1, t.asr),
+        sunset: sunAngleTime(0.833, t.sunset, false)
+      };
+    }
+    var offset = tz - lng / 15;
+    var out = {
+      fajr: t.fajr + offset,
+      sunrise: t.sunrise + offset,
+      dhuhr: t.dhuhr + offset,
+      asr: t.asr + offset,
+      maghrib: t.sunset + offset
+    };
+    out.isha = out.maghrib + 1.5;
+    return out;
+  }
+
+  renderVals() {
+    var self = this;
+    var t = this.tickValues();
+    var now = t.now;
+    var times = t.times;
+    var order = t.order;
+    var nextIdx = t.nextIdx;
+    this.currentIdx = nextIdx;
+
+    var fmt = function (h) { return self.fmtClock(h); };
+
+    var out = {};
+    order.forEach(function (p, idx) {
+      var isNext = idx === nextIdx;
+      out['p' + idx] = {
+        name: p.name,
+        time: fmt(times[p.key]),
+        icon: isNext ? 'var(--accent-ink)' : 'var(--olive)',
+        tileStyle: 'flex:1;min-width:0;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-sizing:border-box;'
+          + (isNext
+            ? 'background:var(--tile-next);border:4px solid var(--gold-line);box-shadow:0 8px 20px rgba(184,112,26,0.24);'
+            : 'background:var(--tile-tr);border:2px solid var(--tile-line);'),
+        nameStyle: 'font-size:21px;font-weight:' + (isNext ? '900' : '700') + ';color:' + (isNext ? 'var(--ink)' : 'var(--tile-name)') + ';',
+        timeStyle: 'font-family:\'Thmanyah Display\',serif;font-size:27px;font-weight:900;letter-spacing:0.5px;color:' + (isNext ? 'var(--accent-ink)' : 'var(--tile-time)') + ';'
+      };
+    });
+
+    var dateLine = '', hijriLabel = '';
+    try {
+      var greg = new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-arab', { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
+      hijriLabel = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-arab', { day: 'numeric', month: 'long', year: 'numeric' }).format(now);
+      dateLine = greg + '  ·  ' + hijriLabel;
+    } catch (e) {
+      dateLine = this.arabicDigits(now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear());
+      hijriLabel = '';
+    }
+
+    var hour = now.getHours();
+    var greeting = 'مساء الخير';
+    if (hour < 11) greeting = 'صباح الخير';
+    else if (hour < 16) greeting = 'نهارك سعيد';
+
+    out.accent = this.props.accent ?? '#E9A23C';
+    out.theme = this.themeVars();
+    out.dark = this.state.dark;
+    out.light = !this.state.dark;
+    out.onTheme = function () {
+      var d = !self.state.dark;
+      self.writeTheme(d);
+      self.setState({ dark: d });
+    };
+    var chip = function (bg, fg) {
+      return 'font-size:15px;font-weight:800;padding:5px 14px;border-radius:14px;background:' + bg + ';color:' + fg + ';white-space:nowrap;';
+    };
+    out.matches = [
+      { comp: 'البريمير ليق', compStyle: chip('var(--chip-red-bg)', 'var(--chip-red-fg)'), teams: 'مان سيتي × برايتون', time: '٦:٠٠ م', dayDate: 'السبت ٣١ أكتوبر' },
+      { comp: 'دوري روشن', compStyle: chip('var(--chip-olive-bg)', 'var(--chip-olive-fg)'), teams: 'الهلال × الفتح', time: '٩:٠٠ م', dayDate: 'السبت ٣١ أكتوبر' },
+      { comp: 'الدوري الإسباني', compStyle: chip('var(--chip-gold-bg)', 'var(--chip-gold-fg)'), teams: 'برشلونة × ألافيس', time: '١١:٠٠ م', dayDate: 'السبت ٣١ أكتوبر' },
+      { comp: 'قمة البريمير ليق', compStyle: chip('var(--chip-red-bg)', 'var(--chip-red-fg)'), teams: 'ليفربول × أرسنال', time: '٧:٣٠ م', dayDate: 'الأحد ١ نوفمبر' },
+      { comp: 'أبطال أوروبا', compStyle: chip('var(--chip-plum-bg)', 'var(--chip-plum-fg)'), teams: 'أتلتيكو مدريد × بايرن ميونخ', time: '١١:٠٠ م', dayDate: 'الثلاثاء ٣ نوفمبر' }
+    ];
+
+    var layers = this.leafLayers();
+    out.leavesBack = layers.back;
+    out.leavesFront = layers.front;
+    out.greeting = greeting;
+    out.dateLine = dateLine;
+    out.hijriLabel = hijriLabel;
+    out.clock = t.clock;
+    out.countdown = t.countdown;
+    out.nextName = t.nextName;
+    out.tasksHint = 'قائمة المهام والتقويم المشترك';
+    return out;
+  }
+}
+
+mountDC(Component, { accent: '#E9A23C' });
+</script>
+</body>
+</html>
